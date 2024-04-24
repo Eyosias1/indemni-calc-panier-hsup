@@ -22,7 +22,7 @@ function FileUploadForm() {
     formData.append('PanRepas', PanRepas);
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/process-csv', {
+      const response = await fetch('https://indemniter-calculator-6c1f1eb3bb5e.herokuapp.com//process-csv', {
         method: 'POST',
         body: formData,
       });
