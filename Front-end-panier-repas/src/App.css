@@ -1,0 +1,14 @@
+.App h1{
+  text-align: center;
+  color: #101010;
+}
+
+.App {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(12, 125, 245, 0.297);
+}
