@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/indemni-calc-panier-hsup/static/css/main.640d4ad7.css",
-    "main.js": "/indemni-calc-panier-hsup/static/js/main.5bbfc849.js",
+    "main.js": "/indemni-calc-panier-hsup/static/js/main.6a695211.js",
     "static/js/453.942d66e5.chunk.js": "/indemni-calc-panier-hsup/static/js/453.942d66e5.chunk.js",
     "index.html": "/indemni-calc-panier-hsup/index.html",
     "main.640d4ad7.css.map": "/indemni-calc-panier-hsup/static/css/main.640d4ad7.css.map",
-    "main.5bbfc849.js.map": "/indemni-calc-panier-hsup/static/js/main.5bbfc849.js.map",
+    "main.6a695211.js.map": "/indemni-calc-panier-hsup/static/js/main.6a695211.js.map",
     "453.942d66e5.chunk.js.map": "/indemni-calc-panier-hsup/static/js/453.942d66e5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.640d4ad7.css",
-    "static/js/main.5bbfc849.js"
+    "static/js/main.6a695211.js"
   ]
 }
