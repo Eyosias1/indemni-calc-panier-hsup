@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 import './FileUploadForm.css'; // Make sure to import the CSS file
 function FileUploadForm() {
-  const [file, setFile] = useState(null);
+  const [file, setCSVFile] = useState(null);
   const [fichTxt, setTxtFil] = useState(null);
   const [fullName, setFullName] = useState('');
   const [hourlyRate, setHourlyRate] = useState('');
   const [PanRepas, setPanier] = useState('');
   const [downloadLink, setDownloadLink] = useState(null); // State to hold the download link
+  const [errorFilUpload, setError] = useState(false);
 
-  const handleFileChange = (e) => setFile(e.target.files[0]);
-  const handleFileTxtChange = (e) => setTxtFil(e.target.files[1]);
+  const handleFileChange = (e) => {
+    setCSVFile(e.target.files[0]);
+    setError(false);
+  };
+
+  const handleFileTxtChange = (e) => {
+    setTxtFil(e.target.files[0]);
+  };
+
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleHourlyRateChange = (e) => setHourlyRate(e.target.value);
   const handlePanierChange = (e) => setPanier(e.target.value);
@@ -18,12 +26,24 @@ function FileUploadForm() {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('csvfile', file);
-    formData.append('txtfile', fichTxt);
     formData.append('fullname', fullName);
     formData.append('hourlyrate', hourlyRate);
     formData.append('PanRepas', PanRepas);
 
+    // Check if neither a CSV file nor a TXT file is uploaded
+    if(!file && !fichTxt) {
+      setError(true);
+      return;
+    }
+    // Check if both a CSV file and a TXT file are uploaded
+    if(fichTxt) {
+      formData.append('txtfile', fichTxt);
+      console.log("text file in");
+    }
+    if (file) {
+      formData.append('csvfile', file);
+      console.log("csv file in");
+    }
     try {
       const response = await fetch('https://indemni-serv-side.onrender.com/process-csv', {
         method: 'POST',
@@ -44,6 +64,7 @@ function FileUploadForm() {
     } catch (error) {
       console.error('There has been a problem with your fetch operation:', error);
     }
+    setError(false);
   };
 
   return (
@@ -53,18 +74,18 @@ function FileUploadForm() {
         <div className="form-group">
           <input type="text" value={fullName} onChange={handleFullNameChange} placeholder="Nom et Prénom" required />
         </div>
-        <div className="form-group val-use">
-          <input type="text" value={hourlyRate} onChange={handleHourlyRateChange} placeholder="Taux : e.g 11.07 €" />
-          <input type="text" value={PanRepas} onChange={handlePanierChange} placeholder="Ind repas : e.g 13.80€" />
+        <div className="form-group val-use number-input">
+          <input type="number" value={hourlyRate} onChange={handleHourlyRateChange} placeholder="Taux : e.g 11.07 €" />
+          <input type="number" value={PanRepas} onChange={handlePanierChange} placeholder="Ind repas : e.g 13.80€" />
         </div>
         <div className="form-group val-use" >
-          <div className='row'>
+          <div className={errorFilUpload && !file ? 'row error-border' : 'row '}>
             <label>fichier .csv :</label>
             <input type="file" onChange={handleFileChange} accept=".csv" />
           </div>
-          <div className='row'>
+          <div className={errorFilUpload && !fichTxt ? 'row error-border' : 'row '}>
             <label>fichier .txt :</label>
-            <input type="file" onChange={handleFileTxtChange} accept=".txt"  />
+            <input type="file" onChange={handleFileTxtChange} accept=".txt" />
           </div>
         </div>
         <div className="form-group">
