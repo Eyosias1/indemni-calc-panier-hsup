@@ -38,11 +38,9 @@ function FileUploadForm() {
     // Check if both a CSV file and a TXT file are uploaded
     if(fichTxt) {
       formData.append('txtfile', fichTxt);
-      console.log("text file in");
     }
     if (file) {
       formData.append('csvfile', file);
-      console.log("csv file in");
     }
     try {
       const response = await fetch('https://indemni-serv-side.onrender.com/process-csv', {
