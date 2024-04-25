@@ -1,7 +1,7 @@
 /* FileUploadForm.css */
 .form-container {
     max-width: 550px;
-    height: 50%;
+    height: 80%;
     padding: 2rem 2rem;
     border-radius: 20px;
     background-color: rgba(215, 232, 253, 0.869);
@@ -14,6 +14,7 @@ form {
     padding: 60px;
     background-color: #ffffff;
     border-radius: 20px;
+    height: 60%
 }
   .form-group {
     width: 100%;
@@ -32,13 +33,31 @@ form {
     margin-bottom: 1rem;
     background-color: rgba(208, 206, 206, 0.293);
   }
-  .val-use {
+  .val-use{
+    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 10px;
     justify-content: space-between;
   }
+  .val-use > input[type="text"]{
+    width: 80%;
+  }
+  .val-use  > .row{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
 
+  .val-use  > .row > input[type="file"],
+  .val-use  > .row > label{
+    width: 60%;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-around;
+  }
   .form-group button {
     width: 100%;
     background-color: #3b11f5c8;
