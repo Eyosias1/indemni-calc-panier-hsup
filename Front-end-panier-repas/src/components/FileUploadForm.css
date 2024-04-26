@@ -102,7 +102,7 @@ form {
     border-radius: 10px;
     text-decoration: none;
     transition: background-color 0.2s;
-    transform: translateY(-9rem);
+    transform: translateY(-7rem);
     box-shadow:  4px 4px rgba(157, 12, 254, 0.4);
     font: bold;
     font-size: 18px;

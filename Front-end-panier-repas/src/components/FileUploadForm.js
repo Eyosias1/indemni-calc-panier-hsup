@@ -9,6 +9,15 @@ function FileUploadForm() {
   const [downloadLink, setDownloadLink] = useState(null); // State to hold the download link
   const [errorFilUpload, setError] = useState(false);
 
+  const resetForm = () => {
+    setCSVFile(null);
+    setTxtFil(null);
+    setFullName('');
+    setHourlyRate('');
+    setPanier('');
+    setDownloadLink(null);
+    setError(false);
+  };
   const handleFileChange = (e) => {
     setCSVFile(e.target.files[0]);
     setError(false);
@@ -42,8 +51,8 @@ function FileUploadForm() {
     if (file) {
       formData.append('csvfile', file);
     }
-    try {
-      const response = await fetch('https://indemni-serv-side.onrender.com/process-csv', {
+    try { // 
+      const response = await fetch('https://indemni-serv-side.onrender.com/process-csv/process-csv', {
         method: 'POST',
         body: formData,
       });
@@ -73,13 +82,13 @@ function FileUploadForm() {
           <input type="text" value={fullName} onChange={handleFullNameChange} placeholder="Nom et Prénom" required />
         </div>
         <div className="form-group val-use number-input">
-          <input type="number" value={hourlyRate} onChange={handleHourlyRateChange} placeholder="Taux : e.g 11.07 €" />
-          <input type="number" value={PanRepas} onChange={handlePanierChange} placeholder="Ind repas : e.g 13.80€" />
+          <input type="number" value={hourlyRate} onChange={handleHourlyRateChange} placeholder="Taux : e.g 11.07 €" required />
+          <input type="number" value={PanRepas} onChange={handlePanierChange} placeholder="Ind repas : e.g 13.80€" required />
         </div>
         <div className="form-group val-use" >
           <div className={errorFilUpload && !file ? 'row error-border' : 'row '}>
             <label>fichier .csv :</label>
-            <input type="file" onChange={handleFileChange} accept=".csv" />
+            <input type="file" onChange={handleFileChange} accept=".csv"  />
           </div>
           <div className={errorFilUpload && !fichTxt ? 'row error-border' : 'row '}>
             <label>fichier .txt :</label>
@@ -91,7 +100,7 @@ function FileUploadForm() {
         </div>
       </form>
       {downloadLink && (
-        <a href={downloadLink.url} download={downloadLink.filename} className="download-link">
+        <a href={downloadLink.url} download={downloadLink.filename} className="download-link" onClick={resetForm}>
           Download PDF
         </a>
       )}
