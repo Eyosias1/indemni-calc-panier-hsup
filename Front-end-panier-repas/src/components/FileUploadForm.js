@@ -52,7 +52,7 @@ function FileUploadForm() {
       formData.append('csvfile', file);
     }
     try { // 
-      const response = await fetch('https://indemni-serv-side.onrender.com/process-csv/process-csv', {
+      const response = await fetch('https://indemni-serv-side.onrender.com/process-csv', {
         method: 'POST',
         body: formData,
       });
