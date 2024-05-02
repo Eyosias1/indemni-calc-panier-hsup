@@ -1,33 +1,28 @@
-/* Sidebar styling for the InfoCard container */
-.sidebar {
-    width: 250px;  /* Adjust the width as necessary */
-    padding: 20px;
-    background-color: #f1f1f1;  /* Light grey background */
-    height: 100vh;  /* Full-height sidebar */
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);  /* Adds a shadow to the edge of the sidebar */
-    position: fixed;  /* Makes the sidebar stay in place while scrolling */
-    left: 0;  /* Aligns the sidebar to the left side */
-    top: 0;  /* Aligns the sidebar to the top */
-    overflow-y: auto;  /* Adds scroll to the sidebar if content is too long */
-  }
-  
-  /* Styling for the InfoCard itself */
-  .info-card {
-    margin-bottom: 20px;
-    background-color: white;  /* White background for the cards */
-    border-radius: 8px;  /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Subtle shadow for the card */
-    padding: 15px;  /* Padding inside the card */
-    font-size: 14px;  /* Font size for the text */
-  }
-  
-  .info-card h2 {
-    color: #333;  /* Dark grey color for headings */
-    margin-bottom: 10px;  /* Space below the heading */
-  }
-  
-  .info-card p {
-    color: #666;  /* Lighter text color for readability */
-    line-height: 1.5;  /* Spacing between lines */
-  }
-  
+#info-card {
+  text-align: center;
+  padding: 100px 0px;
+  margin-bottom: 40px;
+}
+#info-card h2 {
+  padding: 15px 0px;
+}
+.info-card {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-card .card-2 {
+  flex:1;
+  min-width: 250px;
+  border: dotted;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(155, 119, 233);
+  color: var(--colorprimary);
+}

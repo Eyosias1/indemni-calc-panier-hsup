@@ -75,35 +75,37 @@ function FileUploadForm() {
   };
 
   return (
-    <div className='form-container'>
-      <h1 > Calcul d'Indémnités Panier repas heures sup: </h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <input type="text" value={fullName} onChange={handleFullNameChange} placeholder="Nom et Prénom" required />
-        </div>
-        <div className="form-group val-use number-input">
-          <input type="number" value={hourlyRate} onChange={handleHourlyRateChange} placeholder="Taux : e.g 11.07 €" required />
-          <input type="number" value={PanRepas} onChange={handlePanierChange} placeholder="Ind repas : e.g 13.80€" required />
-        </div>
-        <div className="form-group val-use" >
-          <div className={errorFilUpload && !file ? 'row error-border' : 'row '}>
-            <label>fichier .csv :</label>
-            <input type="file" onChange={handleFileChange} accept=".csv"  />
+    <div className='card section'>
+    <h3> Calculate: </h3>
+       <div className='form-container'>
+          <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input type="text" value={fullName} onChange={handleFullNameChange} placeholder="Nom et Prénom" required />
           </div>
-          <div className={errorFilUpload && !fichTxt ? 'row error-border' : 'row '}>
-            <label>fichier .txt :</label>
-            <input type="file" onChange={handleFileTxtChange} accept=".txt" />
+          <div className="form-group val-use number-input">
+            <input type="number" value={hourlyRate} onChange={handleHourlyRateChange} placeholder="Taux : e.g 11.07 €" required />
+            <input type="number" value={PanRepas} onChange={handlePanierChange} placeholder="Ind repas : e.g 13.80€" required />
           </div>
-        </div>
-        <div className="form-group">
-          <button type="submit">Generate Report</button>
-        </div>
-      </form>
-      {downloadLink && (
-        <a href={downloadLink.url} download={downloadLink.filename} className="download-link" onClick={resetForm}>
+          <div className="form-group val-use" >
+            <div className={errorFilUpload && !file ? 'row error-border' : 'row '}>
+              <label>fichier .csv :</label>
+              <input type="file" onChange={handleFileChange} accept=".csv"  />
+            </div>
+            <div className={errorFilUpload && !fichTxt ? 'row error-border' : 'row '}>
+              <label>fichier .txt :</label>
+              <input type="file" onChange={handleFileTxtChange} accept=".txt" />
+            </div>
+          </div>
+          <div className="form-group">
+            <button type="submit">Generate Report</button>
+          </div>
+          </form>
+          {downloadLink && (
+            <a href={downloadLink.url} download={downloadLink.filename} className="download-link" onClick={resetForm}>
           Download PDF
-        </a>
-      )}
+            </a>
+          )}
+        </div>
     </div>
   );
 }
