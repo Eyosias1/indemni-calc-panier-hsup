@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/indemni-calc-panier-hsup/static/css/main.ca756717.css",
-    "main.js": "/indemni-calc-panier-hsup/static/js/main.dfff8168.js",
+    "main.css": "/indemni-calc-panier-hsup/static/css/main.4f183395.css",
+    "main.js": "/indemni-calc-panier-hsup/static/js/main.adf0c509.js",
     "static/js/453.942d66e5.chunk.js": "/indemni-calc-panier-hsup/static/js/453.942d66e5.chunk.js",
+    "static/media/Calculator-ban.jpg": "/indemni-calc-panier-hsup/static/media/Calculator-ban.32ac0b552c2ba5a7dac1.jpg",
+    "static/media/favicon.ico": "/indemni-calc-panier-hsup/static/media/favicon.cd31299c34dee329284e.ico",
     "index.html": "/indemni-calc-panier-hsup/index.html",
-    "main.ca756717.css.map": "/indemni-calc-panier-hsup/static/css/main.ca756717.css.map",
-    "main.dfff8168.js.map": "/indemni-calc-panier-hsup/static/js/main.dfff8168.js.map",
+    "main.4f183395.css.map": "/indemni-calc-panier-hsup/static/css/main.4f183395.css.map",
+    "main.adf0c509.js.map": "/indemni-calc-panier-hsup/static/js/main.adf0c509.js.map",
     "453.942d66e5.chunk.js.map": "/indemni-calc-panier-hsup/static/js/453.942d66e5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca756717.css",
-    "static/js/main.dfff8168.js"
+    "static/css/main.4f183395.css",
+    "static/js/main.adf0c509.js"
   ]
 }
