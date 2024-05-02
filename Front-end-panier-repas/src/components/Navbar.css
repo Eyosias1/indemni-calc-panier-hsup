@@ -1,11 +1,9 @@
 header  {
     margin-top: 0px;
-    /* margin-right: 10px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 80px;
-    /* background-color: #8a2be2; */
     background-color: var(--colorternery);
 }
 
@@ -13,7 +11,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 40px;
-    position: sticky;
+    /* position: sticky; */
     top: 10px;
 }
 
