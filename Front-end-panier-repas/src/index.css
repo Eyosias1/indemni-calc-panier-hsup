@@ -5,7 +5,7 @@
   --colorsecondary: #783dde;
   --colorternery: #9d0cfe66;
   --coloraccent: #eb2424;
-  /* --colorlinks: #8860D0; 8860D0 */
+  --colorlinks: #8860D0;
   --ff: 'Open Sans', 'sans-serif';
   --h1: bold 54px/70px var(--ff);
   --h2: bold 36px/36px var(--ff);
@@ -54,7 +54,7 @@ button {
 }
 
 .section {
-  /* width: 90vh; */
+  width: 250vh;
   max-width: 1080px;
   margin: auto;
 }
