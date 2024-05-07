@@ -1,0 +1,24 @@
+footer{
+    margin: 10% 0;
+    text-align: center;
+}
+
+.social-icons {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin: 10% 0;
+}
+.social-icons img {
+    width: 30px;
+    cursor: pointer;
+}
+svg {
+    fill: var(--colorsecondary);
+    width: 50px;
+}
+
+svg:hover {
+    fill: var(--colorp2)
+}
