@@ -2,6 +2,7 @@ import React from 'react';
 import "./PaymentComplete.css"
 
 function PaymentComponent() {
+    
     return (
         <div className='PaymentComponent section'>
             <div className='Stripe-button'>
@@ -15,6 +16,7 @@ function PaymentComponent() {
                 publishable-key="pk_test_51PC6XD08xYl0mIJxuukdK9lZSqMIB6xhSBziTbWyDu4YFVepP0o5X4ci5sOLylerTtKhgYMez9sc4zC5Aqjwfd9t00qHmHD3ih"
                 >
                 </stripe-buy-button>
+
             </div>
         </div>
     );

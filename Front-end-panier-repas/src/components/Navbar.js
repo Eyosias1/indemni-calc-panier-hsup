@@ -25,7 +25,8 @@ function Navbar() {
                     <a className="nav-link" href='#calculate' onClick={closeMenu}> Calculate </a>
                 </li>
                 <li className='nav-item'>
-                    <a className="nav-link" href='#Contact' onClick={closeMenu} > Contact </a>
+                    <a className="nav-link" href='#Contact' onClick={closeMenu} > 
+                    Contact </a>
                 </li>
             </nav>
             <div className={`burger ${isActive ? 'active' : ''}`} onClick={toggleMenu}>

@@ -1,10 +1,10 @@
-footer {
-    margin: 20% 0;
+footer{
+    margin: 10% 0;
     text-align: center;
 }
 
 .social-icons {
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     gap: 40px;
     justify-content: center;

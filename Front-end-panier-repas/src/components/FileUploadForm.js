@@ -75,7 +75,7 @@ function FileUploadForm() {
   };
 
   return (
-    <div className='card section'>
+    <div className='card2 section'>
     <h3> Calculate: </h3>
        <div className='form-container'>
           <form onSubmit={handleSubmit}>

@@ -50,7 +50,7 @@ a {
     height: 3px;
     margin: 5px 10px;
     transition: var(--transition);
-    background-color: var(--colorsecondary);
+    background-color: var(--colorprimary);
 }
 
 @media (max-width: 800px) {
@@ -68,7 +68,7 @@ a {
     }
     nav {
         padding-top: 40px;
-        background-color: var(--colorprimary);
+        background-color: var(--colorlinks);
         position: fixed;
         right: -100%;
         top: 80px;
