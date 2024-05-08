@@ -50,30 +50,32 @@ function App() {
   };
   return (
     <div className="App">
-      <Navbar />
-      <Hero />
-      <InfoCard />
-      {isLoggedIn ? (
-        <React.Fragment>
-          {paymentComplete ?
-          (
+      <header className='App-header'>
+        <Navbar />
+        <Hero />
+        <InfoCard />
+        {isLoggedIn ? (
+          <React.Fragment>
+            {paymentComplete ?
+            (
+              <React.Fragment>
+                <FileUploadForm />
+              </React.Fragment>
+              ) :
+            (
+              <React.Fragment>
+                <PaymentComponent  />
+              </React.Fragment>
+            )}
+          </React.Fragment>
+          ) : (
             <React.Fragment>
-              <FileUploadForm />
-            </React.Fragment>
-            ) :
-          (
-            <React.Fragment>
-              <PaymentComponent  />
+              <Login onLoginSuccess={handleLoginSuccess} />
+              <SignIn onLoginSuccess={handleLoginSuccess} />
             </React.Fragment>
           )}
-        </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Login onLoginSuccess={handleLoginSuccess} />
-            <SignIn onLoginSuccess={handleLoginSuccess} />
-          </React.Fragment>
-        )}
-      <Contact />
+        <Contact />
+      </header>
     </div>
   );
 }
